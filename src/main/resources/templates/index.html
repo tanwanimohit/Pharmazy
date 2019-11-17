@@ -15,9 +15,10 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
-        <div class="container"><a class="navbar-brand" href="#" style="font-size:1.5em; font-weight:bold;">💊Pharmazy</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
+        <div class="container"><a class="navbar-brand" href="/" style="font-size:1.5em; font-weight:bold;">💊Pharmazy</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
             <div class="collapse navbar-collapse" id="navcol-1">
-            <a class="btn btn-primary ml-auto" role="button" href="/login">Login</a></div>
+            <a class="btn btn-primary ml-auto" role="button" href="/login">Login</a>
+            
 			<a class="btn btn-primary" role="button" href="/register" style="margin-left:10px;">Register</a></div>
 			
         </div>
@@ -30,9 +31,9 @@
                     <h1 class="mb-5" style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;/*family: verdana;*/">Pharmazy : A Simple And Quicker way to get Medicines Online</h1>
                 </div>
                 <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                    <form>
+                    <form action="/products" method="GET">
                         <div class="form-row">
-                            <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="email" placeholder="Search For Medicines, Health Products"></div>
+                            <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="text" name="search" placeholder="Search For Medicines, Health Products"></div>
                             <div class="col-12 col-md-3"><button class="btn btn-primary btn-block btn-lg" type="submit">Search</button></div>
                         </div>
                     </form>

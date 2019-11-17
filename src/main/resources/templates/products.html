@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html xmlns:th="htpp://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Product Result - Pharmazy</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+
 </head>
 <body>
-<p>
-${products}
-</p>
+	<nav class="navbar navbar-expand-md navbar-light bg-primary">
+        <a href="/" class="navbar-brand text-light">💊Pharmazy</a>
+        
+		<form method="get" action="/products" class=" w-75 " style="display:flex;">
+                <input type="text" class="form-control border-0 w-100 bg-light rounded-0" name="search" placeholder="Search any Medicines">
+                <button type="submit" class="btn text-primary  rounded-0 bg-light">Search</button>
+        </form>
+        <div class="collapse navbar-collapse text-primary bg-primary" style="display:none" id="navbarCollapse">
+        
+        </div>
+        <button class="btn text-primary sm-ml-auto rounded-0 bg-light">🛒Cart</button>
+    </nav>
+    <br>
+<p><b th:text="@{'🔍' + ${querySize}}" class="ml-5" ></b> Products Found </p>
+<hr>
+
+<div class="container col-sm-10" style="display:flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; align-items: space-around;">
+
+<p th:if="${querysize > 0}">
+	
+	<div th:each="product: ${products}" style="padding:10px;" >
+	   <div class="card" style="width: 18rem;">
+	  	<img class="card-img-top" th:src="${product.p_image}" th:alt="${product.p_name}" width="290px" height="200px"/>
+	  	<div class="card-body">
+	    	<h5  th:text="${product.p_name}" class="card-title"></h5>
+	    	<h6 th:text="${product.p_price}" class="card-title"></h6>
+	    	<p th:text="${product.p_description}" class="card-text"></p>
+	    	<a th:href="@{'/addtocart/' + ${product.p_id}}" class="btn btn-primary">Add to Card</a>
+	  	</div>
+	   </div>	
+	</div> 
+
+</div>
+
+
+
+ 
+
 </body>
 </html>

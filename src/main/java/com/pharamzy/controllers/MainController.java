@@ -1,6 +1,8 @@
 package com.pharamzy.controllers;
 
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,15 +31,17 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/",method=RequestMethod.GET)
-	public String yo()
+	public String yo(Model model)
 	{
+		model.addAttribute("var1","RnadomData");
 		return "index";
 	}
 	
 	@RequestMapping(value="/products",method=RequestMethod.GET)
 	public String products(@RequestParam("search") String query,Model model)
 	{
-		Products products =pr.SearchProduct(query);
+		Set<Products> products =pr.SearchProduct(query);
+		model.addAttribute("querySize",products.size());
 		model.addAttribute("products",products);
 		return "products";
 	}

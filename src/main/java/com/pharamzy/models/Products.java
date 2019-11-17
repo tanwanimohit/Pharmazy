@@ -3,12 +3,16 @@ package com.pharamzy.models;
 import java.sql.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name="products")
@@ -27,8 +31,9 @@ public class Products {
 	Date p_exp_date;
 	int p_stock;
 	
-	@ManyToOne
-    @JoinColumn(name="cat_id")
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name="cat_id",nullable=false)
+	@OnDelete(action = OnDeleteAction.CASCADE)
     Category category_id;
 
 	public int getP_id() {
