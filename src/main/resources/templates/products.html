@@ -35,15 +35,18 @@
 <p th:if="${querysize > 0}">
 	
 	<div th:each="product: ${products}" style="padding:10px;" >
-	   <div class="card" style="width: 18rem;">
-	  	<img class="card-img-top" th:src="${product.p_image}" th:alt="${product.p_name}" width="290px" height="200px"/>
-	  	<div class="card-body">
-	    	<h5  th:text="${product.p_name}" class="card-title"></h5>
-	    	<h6 th:text="${product.p_price}" class="card-title"></h6>
-	    	<p th:text="${product.p_description}" class="card-text"></p>
-	    	<a th:href="@{'/addtocart/' + ${product.p_id}}" class="btn btn-primary">Add to Card</a>
-	  	</div>
-	   </div>	
+	   
+		   <div class="card" style="width: 18rem;">
+		  	<img class="card-img-top" th:src="${product.p_image}" th:alt="${product.p_name}" width="290px" height="200px"/>
+		  	<div class="card-body">
+		    	<h5  th:text="${product.p_name}" class="card-title"></h5>
+		    	<h6 th:text="${product.p_price}" class="card-title"></h6>
+		    	<p th:text="${product.p_description}" class="card-text"></p>
+		    	<p th:if="${product.p_stock > 0}"><a th:href="@{'/addtocart/' + ${product.p_id}}" class="btn btn-primary">Add to Cart</a></p>
+		    	<p th:if="${product.p_stock == 0}"><a class="btn btn-danger text-light" >Out of Stock</a></p>
+		    	
+		  	</div>
+		   </div>	
 	</div> 
 
 </div>

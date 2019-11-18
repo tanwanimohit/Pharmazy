@@ -63,8 +63,8 @@ input[type="text"]::placeholder {
         <a href="/" class="navbar-brand text-light">💊 Pharmazy</a>
         
 		<form method="get" action="/products" class=" w-75 " style="display:flex;">
-                <input type="text" class="form-control border-0 w-100 bg-light rounded-0" name="search" placeholder="Search any Medicines">
-                <button type="" class="btn text-primary  rounded-0 bg-light">🔍</button>
+                <input type="text" class="form-control border-1 border-light w-100 bg-light rounded-0" name="search" placeholder="Search any Medicines">
+                <button  class="btn text-primary rounded-0 bg-light">🔍</button>
         </form>
         <div class="collapse navbar-collapse text-primary bg-primary" style="display:none" id="navbarCollapse">
                 <button class="btn text-primary sm-ml-auto rounded-0 " > <i class="fa fa-cart-arrow-down"></i>	</button>
@@ -105,10 +105,10 @@ input[type="text"]::placeholder {
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow" role="presentation">
                                 <div class="nav-item dropdown no-arrow">
-								<a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
+								<a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small" th:text="@{${user.u_fname}+' '+${user.u_lname}}"></span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu">
 									<a class="dropdown-item" role="presentation" href="#"><i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
-									<div class="dropdown-divider"></div><a class="dropdown-item" role="presentation" href="#"><i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+									<div class="dropdown-divider"></div><a class="dropdown-item" role="presentation" href="/logout"><i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
 									</div>
                     </div>
                     </li>

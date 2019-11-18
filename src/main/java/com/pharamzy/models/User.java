@@ -18,6 +18,9 @@ public class User {
 	String u_email;
 	String u_password;
 	String u_mobile;
+	String token;
+	boolean email_verify;
+	boolean forget_password;
 	
 	public int getU_id() {
 		return u_id;
@@ -54,6 +57,24 @@ public class User {
 	}
 	public void setU_mobile(String u_mobile) {
 		this.u_mobile = u_mobile;
+	}
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
+	}
+	public boolean isEmail_verify() {
+		return email_verify;
+	}
+	public void setEmail_verify(boolean email_verify) {
+		this.email_verify = email_verify;
+	}
+	public boolean isForget_password() {
+		return forget_password;
+	}
+	public void setForget_password(boolean forget_password) {
+		this.forget_password = forget_password;
 	}
 	
 	

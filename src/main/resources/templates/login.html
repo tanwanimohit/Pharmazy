@@ -15,8 +15,9 @@
 <body>
     <div class="login-clean">
         <form th:action="@{/login}" th:object="${users}" method="post">	
-		<p th:if="${param.InvaildCredentials}" class="error" > Invaild Creditials </p>
-		<p th:if="${param.Success}" class="error" ><b> Registred Success! Login</b> </p>
+		<p th:if="${param.InvaildCredentials}" class="error" > Invalid Credentials </p>
+		<p th:if="${param.Success}" class="error" ><b> Registered Success! Login</b> </p>
+		<p th:if="${param.logout}" class="error" ><b> Logged out Success !</b> </p>
             <h2 >Login Form</h2>
             <br/>
             <div class="form-group"><input class="form-control" type="email" id="username" placeholder="Email" name="u_email" autofocus="autofocus"/></div>

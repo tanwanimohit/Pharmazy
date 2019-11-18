@@ -40,5 +40,16 @@ public class UserServices {
 		else return false;
 	}
 	
+	public User VerifyEmail(String token)
+	{
+		User tuser=userRepository.EmailVerification(token);
+		return tuser;
+	}
+	
+	public User GetUserDeatil(String email)
+	{
+		User tuser=userRepository.CheckUser(email);
+		return tuser;
+	}
 	
 }

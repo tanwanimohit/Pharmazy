@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html xmlns:th="htpp://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Verify Email - Pharmazy</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/verify.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+   <center><b><p th:if="${param.resend}">Email Sent Successfully </p></b></center>
+   <div class="highlight-clean">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Verify Your Email ✅</h2>
+                <p class="text-center">Hey there, we have sent you an email with a verification link kindly check and open the link to verify the email.</p>
+            </div>
+<div class="buttons"><a class="btn btn-primary" role="button" href="/resendverification">Resend the email</a><button class="btn btn-light" onclick="location.href='/logout';" type="button">logout</button></div>        </div>
+    </div>
+	
+	
+
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script id="bs-live-reload" data-sseport="63820" data-lastchange="1573561751788" src="/js/livereload.js"></script>
+</body>
+
+</html>

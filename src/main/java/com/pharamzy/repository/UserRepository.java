@@ -14,4 +14,7 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 	
 	@Query(value="Select * from users where u_email=:u_email", nativeQuery = true)
 	public User CheckUser(@Param("u_email")String u_email );
+	
+	@Query(value="Select * from users where token=:token AND email_verify=0", nativeQuery = true)
+	public User EmailVerification(@Param("token")String token);
 }
