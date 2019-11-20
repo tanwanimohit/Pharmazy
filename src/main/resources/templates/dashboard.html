@@ -122,7 +122,7 @@ input[type="text"]::placeholder {
                      <li class="nav-item dropdown">
 							<a class="dropdown-toggle nav-link" id="navbarDropdown" role="button" aria-haspopup="true" data-toggle="dropdown" aria-expanded="false" href="#">
 								<span class="profilename    text-light " th:text="@{${user.u_fname}+' '+${user.u_lname}}">
-								Pratibha Hotwani
+								
 								</span>
 							</a>                                   
 		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -130,7 +130,7 @@ input[type="text"]::placeholder {
 									<i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-primary"></i>&nbsp;Profile
 									</a>
 		<div class="dropdown-divider"></div>
-			<a class="dropdown-item" href="#">
+			<a class="dropdown-item" href="/logout">
 			<i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-primary"></i>&nbsp;Logout
 			</a>
 		</div>

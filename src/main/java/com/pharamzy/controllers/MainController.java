@@ -56,6 +56,9 @@ public class MainController {
 		return "redirect:/";
 	}
 	
+	
+	//Main Route.
+	
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String yo(Model model,HttpSession session)
 	{
